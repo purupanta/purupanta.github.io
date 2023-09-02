@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <title>Puru Panta Homepage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/styles.main.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles.table.css">
+    <script type="text/javascript" src="./js/scripts.main.js"></script>
+    <script type="text/javascript" src="./js/scripts.section.visibility.js"></script>
+
+    <script>
+
+        //$.support.cors = true;
+        $(document).ready(function () {
+
+            //Default page
+            var clicked_id = 'home';
+            var clicked_name = 'home';
+            var page_name = '';
+
+            var website_fns = {
+                LoadPage:
+                    function (ShowDefaultPage) {
+
+                        if (ShowDefaultPage == 'false') {
+                            this.clicked_id = $(this).attr('id');
+                            this.clicked_name = $(this).attr('name');
+                        }
+
+                        //alert('id:' + id + 'name:' + name);
+                        this.page_name = './' + this.clicked_name + '.html';
+
+                        $("#main_content").load(page_name, function (responseTxt, statusTxt, xhr) {
+                            if (statusTxt == "success") {
+                                alert("Page Location: " + this.page_name #top);
+                            }
+                            if (statusTxt == "error") {
+                                alert("Error: " + xhr.status + ": " + xhr.statusText);
+                            }
+                        });
+                    },
+
+                FixActiveClass:
+                    function () {
+                        $("nav.nav a").removeClass("active");
+                        var tst = "nav.nav a#" + clicked_id;
+                        //alert(tst)
+                        $(tst).addClass("active");
+                    },
+                //Another function
+            }
+
+            //Show the default page (home) initially
+            website_fns.LoadPage('true');
+
+            $('a').click(function () {
+                website_fns.LoadPage('false');
+                //website_fns["FixActiveClass"];
+                website_fns.FixActiveClass();
+            });
+
+
+        });
+
+    </script>
+
+</head>
+
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="header_img"> <img src="./img/purupanta.jpg" alt=""> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <a href="#home" id="home" name="home" class="nav_logo active"> <i class='bx bx-home-smile nav_logo-icon'></i> <span class="nav_logo-name">Puru Homepage</span> </a>
+                <div class="nav_list">
+                    <a href="#timeline" id="timeline" name="timeline" class="nav_link"> <i class='bx bx-book-reader nav_icon'></i> <span class="nav_name">Timeline</span> </a>
+                    <a href="#res-pub" id="res-pub" name="res-pub" class="nav_link"> <i class='bx bx-clipboard nav_icon'></i> <span class="nav_name">Research</span> </a>
+                    <a href="#projects" id="projects" name="projects" class="nav_link"> <i class='bx bx-layer nav_icon'></i> <span class="nav_name">Projects</span> </a>
+                    <a href="#contact" id="contact" name="contact" class="nav_link"> <i class='bx bx-calendar-check nav_icon'></i> <span class="nav_name">Contact</span> </a>
+                </div>
+            </div>
+            <a href="#" class="nav_link"> <i class='bx bx-heart-circle nav_icon'></i> <span class="nav_name">Thank you for visit!</span> </a>
+        </nav>
+    </div>
+    <!--Container Main start-->
+    <div class="height-100 bg-light">
+        THIS IS DEFAULT PAGE2
+        <div id="main_content">
+
+            THIS IS DEFAULT PAGE1
+        </div>
+
+    </div>
+    <!--Container Main end-->
+
+
+</body>
+</html>
