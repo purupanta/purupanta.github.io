@@ -78,7 +78,7 @@
             website_fns.clickedMenuItem(clicked_id);
 
             $('a.nav_logo, a.nav_link').click(function (e) {
-                e.preventDefault();
+                //e.preventDefault();
                 this.clicked_id = $(this).attr('id');
                 console.log("Clicked Id: " + this.clicked_id);
 
