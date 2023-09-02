@@ -37,7 +37,7 @@
 
             var website_fns = {
                 LoadPage:
-                    function (page_loc_name) {
+                    function (page_loc_name = null) {
                         $("#main_content").load(page_loc_name, function (responseTxt, statusTxt, xhr) {
                             if (statusTxt == "success") {
                                 console.log("Page Location: " + this.page_name + "#top");
@@ -49,7 +49,7 @@
                     },
 
                 clickedMenuItem:
-                    function (clicked_id) {
+                    function (clicked_id = null) {
                         console.log("Clicked Id: " + clicked_id + '\n');
 
                         for (const [key, value] of Object.entries(page_dict)) {
