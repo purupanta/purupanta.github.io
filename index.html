@@ -75,7 +75,8 @@
                 e.preventDefault();
                 this.clicked_id = $(this).attr('id');
 
-                console.log("Clicked Id: " + this.clicked_id);
+                console.log("Clicked Id1: " + $(this).attr('id'));
+                console.log("Clicked Id2: " + this.clicked_id);
 
                 website_fns.clickedMenuItem(clicked_id);
 
