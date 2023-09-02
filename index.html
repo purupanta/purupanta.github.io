@@ -40,7 +40,7 @@
                     function (page_loc_name = null) {
                         $("#main_content").load(page_loc_name, function (responseTxt, statusTxt, xhr) {
                             if (statusTxt == "success") {
-                                console.log("Page Location: " + page_loc_name + "#top");
+                                console.log("Page Location: " + page_loc_name);
                             }
                             if (statusTxt == "error") {
                                 console.log("Error: " + xhr.status + ": " + xhr.statusText);
