@@ -28,10 +28,12 @@
         //$.support.cors = true;
         $(document).ready(function () {
 
-            //Default page
-            var clicked_id = 'home';
-            var clicked_name = 'home';
-            var page_name = '';
+            var page_dict = {
+                default_page: { id: 'default_page', name: 'default_page', page_loc_name: './home.html#top' }, //default page is set to 'home'
+                index: { id: 'index', name: 'index', page_loc_name: './index.html#top' },
+                home: { id: home, name: home, page_loc_name: './home.html#top' },
+                timeline: { id: 'timeline', name: 'timeline', page_loc_name: './home.timeline#top' },                
+            }
 
             var website_fns = {
                 LoadPage:
@@ -46,34 +48,36 @@
                         });
                     },
 
-                BuildPageLoc:
-                    function (page_id, clicked_name) {
-                        //console.log('page id:' + id + ' page name:' + name);
-                        page_name = './' + clicked_name + '.html#top';
-                        return page_name;
-                    },
+                clickedMenuItem:
+                    function (clicked_id) {
+                        for (const [key, value] of Object.entries(page_dict)) {
+                            console.log('(key: value) = ${key}: ${value}');
 
+                            if (clicked_id == value.id) {
+                                website_fns.LoadPage(value.page_loc_name);
 
-                FixActiveClass:
-                    function () {
-                        $("nav.nav a").removeClass("active");
-                        var clicked_id = "nav.nav a#" + clicked_id;
-                        console.log(tst);
-                        $(clicked_id).addClass("active");
+                                $("a.nav_logo").removeClass("active");
+                                $("a.nav_link").removeClass("active");
+                                $(clicked_id).addClass("active");
+                                break;
+                            }
+                        }
                     },
 
             }
 
+            var clicked_id = 'default_page';
+
             //Show the default page (home) initially
-            website_fns.LoadPage('default_page');
+            website_fns.clickedMenuItem(clicked_id);
 
-            $('a').click(function (e) {
+            $('a.nav_logo, a.nav_link').click(function (e) {
                 e.preventDefault();
-                website_fns.LoadPage();
-                //website_fns["FixActiveClass"];
-                website_fns.FixActiveClass();
-            });
+                this.clicked_id = $(this).attr('id');
 
+                website_fns.clickedMenuItem(clicked_id);
+
+            });
 
         });
 
@@ -89,12 +93,12 @@
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
 
-                <a href="#home" id="home" name="home" class="nav_logo active"> <i class='bx bx-home-smile nav_logo-icon'></i> <span class="nav_logo-name">Puru Homepage</span> </a>
-                <div class="nav_list">
-                    <a href="#timeline" id="timeline" name="timeline" class="nav_link"> <i class='bx bx-book-reader nav_icon'></i> <span class="nav_name">Timeline</span> </a>
-                    <a href="#res-pub" id="res-pub" name="res-pub" class="nav_link"> <i class='bx bx-clipboard nav_icon'></i> <span class="nav_name">Research</span> </a>
-                    <a href="#projects" id="projects" name="projects" class="nav_link"> <i class='bx bx-layer nav_icon'></i> <span class="nav_name">Projects</span> </a>
-                    <a href="#contact" id="contact" name="contact" class="nav_link"> <i class='bx bx-calendar-check nav_icon'></i> <span class="nav_name">Contact</span> </a>
+            <a href="#home" id="home" name="home" class="nav_logo active"> <i class='bx bx-home-smile nav_logo-icon'></i> <span class="nav_logo-name">Puru Homepage</span> </a>
+            <div class="nav_list">
+                <a href="#timeline" id="timeline" name="timeline" class="nav_link"> <i class='bx bx-book-reader nav_icon'></i> <span class="nav_name">Timeline</span> </a>
+                <a href="#res-pub" id="res-pub" name="res-pub" class="nav_link"> <i class='bx bx-clipboard nav_icon'></i> <span class="nav_name">Research</span> </a>
+                <a href="#projects" id="projects" name="projects" class="nav_link"> <i class='bx bx-layer nav_icon'></i> <span class="nav_name">Projects</span> </a>
+                <a href="#contact" id="contact" name="contact" class="nav_link"> <i class='bx bx-calendar-check nav_icon'></i> <span class="nav_name">Contact</span> </a>
 
             </div>
             <a href="#" class="nav_link"> <i class='bx bx-heart-circle nav_icon'></i> <span class="nav_name">Thank you for visit!</span> </a>
