@@ -47,10 +47,10 @@
 
                         $("#main_content").load(page_name, function (responseTxt, statusTxt, xhr) {
                             if (statusTxt == "success") {
-                                alert("Page Location: " + this.page_name + "#top");
+                                console.log("Page Location: " + this.page_name + "#top");
                             }
                             if (statusTxt == "error") {
-                                alert("Error: " + xhr.status + ": " + xhr.statusText);
+                                console.log("Error: " + xhr.status + ": " + xhr.statusText);
                             }
                         });
                     },
@@ -58,11 +58,11 @@
                 FixActiveClass:
                     function () {
                         $("nav.nav a").removeClass("active");
-                        var tst = "nav.nav a#" + clicked_id;
-                        //alert(tst)
-                        $(tst).addClass("active");
+                        var clicked_id = "nav.nav a#" + clicked_id;
+                        console.log(tst);
+                        $(clicked_id).addClass("active");
                     },
-                //Another function
+
             }
 
             //Show the default page (home) initially
