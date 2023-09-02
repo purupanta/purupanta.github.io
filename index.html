@@ -50,13 +50,16 @@
 
                 clickedMenuItem:
                     function (clicked_id) {
-                        console.log("Clicked Id: " + this.clicked_id);
+                        console.log("Clicked Id: " + clicked_id + '\n');
 
                         for (const [key, value] of Object.entries(page_dict)) {
-                            console.log('(key: value) = ${key}: ${value}');
-                            console.log(key, value);
+                            //console.log('(key: value) = ${key}: ${value}');
+                            console.log('key, value: ' + key + '||' + value + '\n');
 
+                            console.log('Value Id: ' + value.id + '\n');
                             if (clicked_id == value.id) {
+
+
                                 website_fns.LoadPage(value.page_loc_name);
 
                                 $("a.nav_logo").removeClass("active");
