@@ -67,7 +67,8 @@
             //Show the default page (home) initially
             //website_fns.LoadPage('default_page');
 
-            $('a').click(function () {
+            $('a').click(function (e) {
+                e.preventDefault();
                 website_fns.LoadPage();
                 //website_fns["FixActiveClass"];
                 website_fns.FixActiveClass();
