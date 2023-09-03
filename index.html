@@ -53,12 +53,10 @@
                         console.log("Clicked Id: " + clicked_id + '\n');
 
                         for (const [key, value] of Object.entries(page_dict)) {
-                            //console.log('(key: value) = ${key}: ${value}');
-                            console.log('key, value: ' + key + '||' + JSON.stringify(value) + '\n');
-
-                            console.log('Value Id: ' + value.id + '\n');
+                           
                             if (clicked_id == value.id) {
 
+                                console.log('key, value: ' + key + '||' + JSON.stringify(value) + '\n');
 
                                 website_fns.LoadPage(value.page_loc_name);
 
