@@ -8,7 +8,8 @@
 }
 .nav-tabs {
     width: 50%;
-    position:fixed;
+    position: fixed;
+    float: left !important;
 }
 .nav li {
     flex: auto;
