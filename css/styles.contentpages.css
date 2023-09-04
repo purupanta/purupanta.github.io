@@ -22,3 +22,12 @@
     border-radius: 50%;
 }
 
+.tab-content {
+    margin-top: 25px;
+}
+
+.tab-active {
+    background-color: #ffffff;
+    color: #336699;
+}
+
