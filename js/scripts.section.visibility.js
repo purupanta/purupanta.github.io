@@ -8,7 +8,6 @@ function readyFn(jQuery) {
 $(document).ready(function () {
     console.log("ready!");
 
-
     var page_dict = {
         default_page: { id: 'default_page', name: 'default_page', page_loc_name: './home.html#top' }, //default page is set to 'home'
         index: { id: 'index', name: 'index', page_loc_name: './index.html#top' },
@@ -61,7 +60,7 @@ $(document).ready(function () {
     $('a.nav_logo, a.nav_link').click(function (e) {
         //e.preventDefault();
         this.clicked_id = $(this).attr('id');
-        console.log("Clicked Id: " + this.clicked_id);
+        //console.log("Clicked Id: " + this.clicked_id);
 
         website_fns.clickedMenuItem(this.clicked_id);
 
