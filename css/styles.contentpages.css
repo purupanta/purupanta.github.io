@@ -1,13 +1,13 @@
 .nav {
     height: 100%;
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     overflow: hidden;
     
 }
 .nav-tabs {
-    width: 100%;
+    width: 50%;
     position:fixed;
 }
 .nav li {
