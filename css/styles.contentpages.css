@@ -22,10 +22,6 @@
     border-radius: 50%;
 }
 
-#myTabContent.tab-content {
-    margin-top: 100px;
-}
-
 .tab-active {
     background-color: #ffffff;
     color: #336699;
