@@ -6,7 +6,7 @@ function readyFn(jQuery) {
 
 // A $( document ).ready() block.
 $(document).ready(function () {
-    console.log("ready!");
+    console.log("Page loaded and ready!");
 
     var page_dict = {
         "default_page": { "id": "default_page", "name": "default_page", "page_loc_name": "./home.html#top" }, //default page is set to 'home'
@@ -69,12 +69,12 @@ $(document).ready(function () {
 
 
     $("#home").click(function () {
-        $("#home").show();
+        //$("#home").show();
         //$("#timeline").hide();
     });
 
     $("#timeline").click(function () {
-        $("#timeline").show();
+        //$("#timeline").show();
         //$("#home").hide();
     });
 });
