@@ -5,3 +5,7 @@
     justify-content: space-between;
     overflow: hidden
 }
+.nav li {
+    flex: auto;
+}
+
