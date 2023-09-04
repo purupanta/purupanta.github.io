@@ -14,3 +14,8 @@
     flex: auto;
 }
 
+.rounded-circle {
+    border-radius: 50%;
+    width: 200px;
+}
+
