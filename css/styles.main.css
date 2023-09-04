@@ -15,6 +15,15 @@
     box-sizing: border-box
 }
 
+/* Puru added start */
+
+.field_set {
+    border-color: #F00;
+    border-style: solid;
+}
+
+/* Puru added end */
+
 body {
     position: relative;
     margin: var(--header-height) 0 0 0;
