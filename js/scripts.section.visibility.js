@@ -70,12 +70,12 @@ $(document).ready(function () {
 
     $("#home").click(function () {
         $("#home").show();
-        $("#timeline").hide();
+        //$("#timeline").hide();
     });
 
     $("#timeline").click(function () {
         $("#timeline").show();
-        $("#home").hide();
+        //$("#home").hide();
     });
 });
 
