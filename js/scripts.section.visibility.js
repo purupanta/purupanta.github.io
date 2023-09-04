@@ -70,11 +70,11 @@ $(document).ready(function () {
 
     $("#home").click(function () {
         $("#home").show();
-        $("#research").hide();
+        $("#timeline").hide();
     });
 
-    $("#research").click(function () {
-        $("#research").show();
+    $("#timeline").click(function () {
+        $("#timeline").show();
         $("#home").hide();
     });
 });
