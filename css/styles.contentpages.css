@@ -1,6 +1,6 @@
 .nav {
     height: 100%;
-    display: block;
+    display: inline-block;
     flex-direction: row;
     justify-content: space-between;
     overflow: hidden;
