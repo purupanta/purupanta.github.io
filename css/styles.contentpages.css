@@ -31,3 +31,11 @@
     color: #336699;
 }
 
+.nav-pills li {
+    margin-left: 1px;
+    /* use whatever you want */
+}
+
+.nav-pills a {
+    /* use font-family and font-size to change font and size of it. */
+} 
