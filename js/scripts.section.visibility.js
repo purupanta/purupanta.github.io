@@ -9,10 +9,11 @@ $(document).ready(function () {
     console.log("ready!");
 
     var page_dict = {
-        default_page: { id: 'default_page', name: 'default_page', page_loc_name: './home.html#top' }, //default page is set to 'home'
-        index: { id: 'index', name: 'index', page_loc_name: './index.html#top' },
-        home: { id: 'home', name: 'home', page_loc_name: './home.html#top' },
-        timeline: { id: 'timeline', name: 'timeline', page_loc_name: './timeline.html#top' },
+        "default_page": { "id": "default_page", "name": "default_page", "page_loc_name": "./home.html#top" }, //default page is set to 'home'
+        "index": { "id": "index", "name": "index", "page_loc_name": "./index.html#top" },
+        "home": { "id": "home", "name": "home", "page_loc_name": "./home.html#top" },
+        "timeline": { "id": "timeline", "name": "timeline", "page_loc_name": "./timeline.html#top" },
+        "res- pub": { "id": "res-pub", "name": "res-pub", "page_loc_name": "./res-pub.html#top" },
     }
 
     var website_fns = {
