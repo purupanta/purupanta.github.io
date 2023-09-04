@@ -4,7 +4,7 @@
     flex-direction: row;
     justify-content: space-between;
     overflow: hidden;
-    position: fixed;
+    
 }
 .nav li {
     flex: auto;
