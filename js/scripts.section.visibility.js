@@ -81,3 +81,7 @@ $(document).ready(function () {
 
 // or:
 //$(window).on("load", readyFn);
+
+#exTab1.tab - content > [id = 'a1']  {
+    background - color: #EF476F;
+}
